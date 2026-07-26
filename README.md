@@ -277,10 +277,8 @@ If you find this repository valuable:
 
 ## 🌐 Connect With Me
 
-- **LinkedIn**: [Himanshu Verma](https://linkedin.com/in/userhimanshuverma)
-- **GitHub**: [@userhimanshuverma](https://github.com/userhimanshuverma)
-- **Twitter / X**: [@himanshu_dev](https://x.com)
-- **Portfolio**: [himanshuverma.dev](https://himanshuverma.dev)
+- **LinkedIn**: [Himanshu Verma](https://www.linkedin.com/in/himanshu-verma-822a07286/)
+- **Portfolio**: [Himanshu Verma](https://himanshuverma-theta.vercel.app/)
 
 ---
 
