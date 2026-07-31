@@ -204,18 +204,18 @@ Therefore, when a network partition occurs ($P$), you are left with only two rea
 
 ```mermaid
 flowchart TD
-    Client[Client Sends Request] --> NetCheck{Network Healthy?}
+    Client["Client Sends Request"] --> NetCheck{"Network Healthy?"}
     
-    NetCheck -- Yes --> SyncOp[Execute Normal Synchronized Operation]
-    SyncOp --> Response200[Return 200 OK with Latest Data]
+    NetCheck -- Yes --> SyncOp["Execute Normal Synchronized Operation"]
+    SyncOp --> Response200["Return 200 OK with Latest Data"]
     
-    NetCheck -- No (Network Partition) --> ModeChoice{System Design Choice}
+    NetCheck -- "No (Network Partition)" --> ModeChoice{"System Design Choice"}
     
-    ModeChoice -- CP System --> RejectReq[Refuse Write / Fail Read]
-    RejectReq --> ErrorResp[Return 503 Service Unavailable / Consistency Error]
+    ModeChoice -- CP System --> RejectReq["Refuse Write / Fail Read"]
+    RejectReq --> ErrorResp["Return 503 Service Unavailable / Consistency Error"]
     
-    ModeChoice -- AP System --> AcceptLocal[Process Request Locally on Node]
-    AcceptLocal --> StaleResp[Return 200 OK with Available Data (May Be Stale)]
+    ModeChoice -- AP System --> AcceptLocal["Process Request Locally on Node"]
+    AcceptLocal --> StaleResp["Return 200 OK with Available Data (May Be Stale)"]
 ```
 
 ---
