@@ -236,15 +236,15 @@ graph TD
         H[(State Store C)]
     end
 
-    A -->|1. Propose Action| B
-    B -->|2. Replicate Proposal| C
-    B -->|2. Replicate Proposal| D
-    B -->|2. Replicate Proposal| E
-    C --|3. Confirm ACK| B
-    D --|3. Confirm ACK| B
-    B -->|4. Majority Reached -> Commit| F
-    B -->|4. Commit Instruction| C
-    B -->|4. Commit Instruction| D
+    A -->|"1. Propose Action"| B
+    B -->|"2. Replicate Proposal"| C
+    B -->|"2. Replicate Proposal"| D
+    B -->|"2. Replicate Proposal"| E
+    C -->|"3. Confirm ACK"| B
+    D -->|"3. Confirm ACK"| B
+    B -->|"4. Majority Reached (Commit)"| F
+    B -->|"4. Commit Instruction"| C
+    B -->|"4. Commit Instruction"| D
     C --> G
     D --> H
 ```
