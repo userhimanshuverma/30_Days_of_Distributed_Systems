@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package user;
+
+// The UserService defines the RPC interface contract between client and server.
+service UserService {
+  // Unary RPC: Client sends a single UserRequest, Server returns a single UserResponse.
+  rpc GetUser (UserRequest) returns (UserResponse);
+
+  // Server Streaming RPC: Client requests user activity audit logs, Server streams records.
+  rpc StreamUserActivity (UserRequest) returns (stream ActivityLog);
+}
+
+// Request message requesting details for a specific user ID.
+message UserRequest {
+  int32 user_id = 1;
+}
+
+// Response message containing strongly-typed user profile fields.
+message UserResponse {
+  int32 user_id = 1;
+  string name = 2;
+  string email = 3;
+  string role = 4;
+}
+
+// Log message streamed sequentially back to the client.
+message ActivityLog {
+  string timestamp = 1;
+  string action = 2;
+  string ip_address = 3;
+}
